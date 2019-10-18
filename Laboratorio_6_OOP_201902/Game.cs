@@ -109,7 +109,26 @@ namespace Laboratorio_6_OOP_201902
         }
         public int GetRoundWiner()
         {
-            
+            if (CheckIfEndGame() == true)
+            {
+                if (players[0].LifePoints == 0 && players[1].LifePoints > 0)
+                {
+                    return 1;
+                }
+                else if (players[1].LifePoints == 0 && players[0].LifePoints > 0)
+                {
+                    return 0;
+                }
+                else
+                {
+                    return -1;
+                }
+
+            }
+            else
+            {
+                return 10;
+            }
         }
         
         public void Play()

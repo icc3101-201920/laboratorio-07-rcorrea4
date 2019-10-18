@@ -109,9 +109,24 @@ namespace Laboratorio_6_OOP_201902
             int[] totalAttack = new int[1];
             for (int i = 0; i < 2; i++)
             {
-                if (playerCards[i].ContainsKey(line))
+                if (Board.PlayerCards[i].ContainsKey(EnumType.melee))
                 {
-                    foreach (CombatCard card in playerCards[i][line])
+                    foreach (CombatCard card in Board.PlayerCards[i][line])
+                    {
+                        totalAttack[i] += card.AttackPoints;
+                    }
+                }
+                else if (board.PlayerCards[i].ContainsKey(EnumType.range))
+                {
+                    foreach (CombatCard card in Board.PlayerCards[i][line])
+                    {
+                        totalAttack[i] += card.AttackPoints;
+                    }
+
+                }
+                else if (board.PlayerCards[i].ContainsKey(EnumType.longRange))
+                {
+                    foreach (CombatCard card in Board.PlayerCards[i][line])
                     {
                         totalAttack[i] += card.AttackPoints;
                     }

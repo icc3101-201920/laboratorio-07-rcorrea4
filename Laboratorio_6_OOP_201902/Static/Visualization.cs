@@ -98,7 +98,17 @@ namespace Laboratorio_6_OOP_201902.Static
             Console.ResetColor();
             Console.Clear();
         }
+        public static void ShowBoard(Board board,int player,int[] lifePoints,int[] attackPoints)
+        {
+            Console.WriteLine("Board:");
+            if (player == 1)
+            {
+                Console.WriteLine("oponent - lifePoints:" + lifePoints[0] + " - AttackPoints:" + attackPoints[0]);
+                Console.WriteLine("(longRange)");
+                
 
+            }
+        }
     }
     
 }
